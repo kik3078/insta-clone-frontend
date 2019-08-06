@@ -7,5 +7,6 @@ import { ApolloProvider } from "react-apollo-hooks";
 ReactDOM.render(
     <ApolloProvider client={Client}>
         <App />
-    </ApolloProvider>
-    , document.getElementById('root'));
+    </ApolloProvider>,
+    document.getElementById("root")
+  );
