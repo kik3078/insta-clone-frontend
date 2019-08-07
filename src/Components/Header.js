@@ -83,7 +83,7 @@ export default withRouter(({ history }) => {
                         <SearchInput 
                             value={search.value}
                             onChange={search.onChange}
-                            placeholder="search"
+                            placeholder="검색"
                         />
                     </form>
                 </HeaderColumn>

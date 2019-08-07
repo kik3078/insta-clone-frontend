@@ -53,7 +53,7 @@ export default () => {
             </Helmet>
             {loading && <Loader />}
             {!loading && data && data.seeFeed && data.seeFeed.map(post => (
-                <Post 
+                <Post
                     key={post.id}
                     location={post.location}
                     caption={post.caption}

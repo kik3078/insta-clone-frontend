@@ -2,7 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Input from "../../Components/Input";
-import Button from "../../Components/Botton";
+import Button from "../../Components/Button";
 
 const Wrapper = styled.div`
     min-height: 80vh;
@@ -65,8 +65,8 @@ export default ({
                     <title>Log In | Insta-Clone</title>
                     </Helmet>
                     <form onSubmit={onSubmit}>
-                        <Input placeholder={"Email"} {...email} type="email" />
-                        <Button text={"Log in"} />
+                        <Input placeholder={"이메일"} {...email} type="email" />
+                        <Button text={"로그인"} />
                     </form>
                 </>
             )}{" "}
@@ -76,11 +76,11 @@ export default ({
                     <title>Sign Up | Insta-Clone</title>
                     </Helmet>
                     <form onSubmit={onSubmit}>
-                        <Input placeholder={"First name"} {...firstName} />
-                        <Input placeholder={"Last name"} {...lastName} />
-                        <Input placeholder={"Email"} {...email} type="email" />
-                        <Input placeholder={"Username"} {...username} />
-                        <Button text={"Sign up"} />
+                        <Input placeholder={"성"} {...lastName} />
+                        <Input placeholder={"이름"} {...firstName} />
+                        <Input placeholder={"이메일"} {...email} type="email" />
+                        <Input placeholder={"사용자 이름"} {...username} />
+                        <Button text={"회원가입"} />
                     </form>
                 </>
             )}
@@ -90,7 +90,7 @@ export default ({
                     <title>Confirm Secret | Insta-Clone</title>
                     </Helmet>
                     <form onSubmit={onSubmit}>
-                        <Input placeholder="Paste your secret" required {...secret} />
+                        <Input placeholder="보안 코드를 입력해 주세요" required {...secret} />
                         <Button text={"Confirm"} />
                     </form>
                 </>
@@ -100,13 +100,13 @@ export default ({
             <StateChanger>
                 {action === "logIn" ? (
                     <>
-                        Don't have an account?{" "}
-                        <Link onClick={() => setAction("signUp")}>Sign Up</Link>
+                        계정이 없으신가요?{" "}
+                        <Link onClick={() => setAction("signUp")}>가입하기</Link>
                     </>
                 )   :   (
                     <>
-                        Have an account?{" "}
-                        <Link onClick={() => setAction("logIn")}>Log in</Link>
+                        계정이 있으신가요?{" "}
+                        <Link onClick={() => setAction("logIn")}>로그인</Link>
                     </>
                 )}
             </StateChanger>

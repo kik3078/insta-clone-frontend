@@ -42,19 +42,19 @@ export default () => {
                 try {
                     const { data: { requestSecret } } = await requestSecretMutation();
                     if (!requestSecret) {
-                        toast.error("You don't have an account yet, create one");
+                        toast.error("계정이 없습니다. 먼저 회원가입을 하세요.");
                         setTimeout(() => {
                             setAction("signUp");
                         }, 3000);
                     } else {
-                        toast.success("Check your inbox for your login secret");
+                        toast.success("보안 코드가 전송되었습니다! 보안 코드를 이용하여 로그인 해 주세요.");
                         setAction("confirm");
                     }
                 } catch {
-                    toast.error("Can't request secret, try again");
+                    toast.error("보안 코드를 요청할 수 없습니다. 다시 시도해 주세요.");
                 }
             } else {
-                toast.error("Email is required")
+                toast.error("이메일이 필요합니다.")
             }
         } else if (action === "signUp") {
             if (email.value !== "" &&
@@ -65,16 +65,16 @@ export default () => {
                     try {
                         const { data: { createAccount } } = await createAccountMutation();
                         if (!createAccount) {
-                            toast.error("Can't create account");
+                            toast.error("계정을 만들 수 없습니다.");
                         } else {
-                            toast.success("Account created! Log In now");
+                            toast.success("계정이 생성되었습니다.");
                             setTimeout(() => setAction("logIn"), 3000);
                         }
                     } catch (e) {
                         toast.error(e.message);
                     }
             } else {
-                toast.error("All field are required")
+                toast.error("모든 내용을 채워주세요.")
             }
         } else if (action === "confirm") {
             if (secret.value !== "") {
@@ -86,7 +86,7 @@ export default () => {
                         throw Error();
                     }
                 } catch {
-                    toast.error("Can't confirm secret, check again");
+                    toast.error("보안 코드가 틀렸습니다. 다시 확인해 주세요.");
                 }
             }
         }

@@ -4,8 +4,8 @@ import { Route, Switch } from "react-router-dom";
 import Auth from "../Routes/Auth";
 import Feed from "../Routes/Feed";
 import Explore from "../Routes/Explore";
-import Search from "../Routes/Search";
-import Profile from "../Routes/Profile";
+import Profile from "../Routes/Profile/index";
+import Search from "../Routes/Search/index";
 import Notifications from "../Routes/Notifications";
 
 const LoggedInRoutes = () => (
